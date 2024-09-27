@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_to_moon/home_page.dart';
 
 void main()
 {
@@ -13,9 +14,7 @@ const App({Key?key}):super (key:key);
    return MaterialApp(
      title: 'GoMoon',
      theme: ThemeData(scaffoldBackgroundColor:Color.fromRGBO(31, 31, 31, 1.0),),
-     home:Scaffold(
-      // backgroundColor:Color.fromRGBO(31, 31, 31, 1.0) ,
-     ),
+     home:Homepage(),
    );
   }
 
