@@ -9,7 +9,10 @@ class Homepage extends StatelessWidget{
    return Scaffold(
      body:Container(
        decoration: BoxDecoration(
-         image:DecorationImage(image: AssetImage("assets/images/go_moon.jpg"),
+         color: Colors.red,
+         image:DecorationImage(
+           fit: BoxFit.fitHeight,
+           image: AssetImage("assets/images/go_moon.jpg"),
          )
        ),
      ),
