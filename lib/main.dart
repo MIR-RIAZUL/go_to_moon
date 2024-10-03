@@ -12,6 +12,7 @@ const App({Key?key}):super (key:key);
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
+     debugShowCheckedModeBanner: false,
      title: 'GoMoon',
      theme: ThemeData(scaffoldBackgroundColor:Color.fromRGBO(31, 31, 31, 1.0),),
      home:Homepage(),

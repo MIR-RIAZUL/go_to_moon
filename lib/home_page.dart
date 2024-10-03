@@ -17,7 +17,7 @@ class Homepage extends StatelessWidget{
            height:_deviceHeight ,
        width: _deviceWidth,
        padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05,),
-       child: _PageTitle(),
+       child:_destinationDropDownWidget()
       )
      )
    );
@@ -25,7 +25,7 @@ class Homepage extends StatelessWidget{
 
   Widget _PageTitle()
   {
-    return const Text(" GO MOON",
+    return const Text("    GO MOON",
       style:TextStyle(
           color: Colors.blueGrey,
           fontSize: 70,
@@ -45,5 +45,20 @@ class Homepage extends StatelessWidget{
       ),
     );
   }
+
+Widget _destinationDropDownWidget(){
+    List<DropdownMenuItem<String>> _items=[
+      'jams web station',
+      'preneure station',
+    ].map ((e) {
+      return DropdownMenuItem(
+        child:Text(e),
+        value:e,
+      );
+    },).toList();
+    return Container(
+      child: DropdownButton(items: _items, onChanged: (_){}),
+    );
+}
 }
 
