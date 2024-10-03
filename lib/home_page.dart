@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_to_moon/widgets/custom_dropdown_button.dart';
 
 class Homepage extends StatelessWidget{
 
@@ -17,7 +18,16 @@ class Homepage extends StatelessWidget{
            height:_deviceHeight ,
        width: _deviceWidth,
        padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05,),
-       child:_destinationDropDownWidget()
+       child:Column(
+         mainAxisAlignment:MainAxisAlignment.spaceBetween,
+         mainAxisSize: MainAxisSize.max,
+         crossAxisAlignment:CrossAxisAlignment.start ,
+         children: [
+           _PageTitle(),
+           _destinationDropDownWidget()
+
+         ],
+       )
       )
      )
    );
@@ -46,19 +56,14 @@ class Homepage extends StatelessWidget{
     );
   }
 
-Widget _destinationDropDownWidget(){
-    List<DropdownMenuItem<String>> _items=[
-      'jams web station',
-      'preneure station',
-    ].map ((e) {
-      return DropdownMenuItem(
-        child:Text(e),
-        value:e,
-      );
-    },).toList();
-    return Container(
-      child: DropdownButton(items: _items, onChanged: (_){}),
-    );
+Widget _destinationDropDownWidget()
+{
+return customDropDownButton(values:const[
+  'james web station',
+  'preneure station',
+], width: _deviceWidth,);
 }
 }
+
+
 
