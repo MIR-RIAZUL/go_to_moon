@@ -22,8 +22,8 @@ class Homepage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [_PageTitle(), _destinationDropDownWidget(),
-                    _travellerInformationWidget()],
+                  children: [_PageTitle(),
+                    _bookRideWidget()],
                 ))));
   }
 
@@ -47,6 +47,19 @@ class Homepage extends StatelessWidget {
       )),
     );
   }
+  Widget _bookRideWidget()
+  {
+return Container(height: _deviceHeight *0.25,
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    mainAxisSize: MainAxisSize.max,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      _destinationDropDownWidget()
+    ],
+  ),
+);
+  }
 
   Widget _destinationDropDownWidget(){
     return customDropDownButton(values:const[
@@ -56,14 +69,31 @@ class Homepage extends StatelessWidget {
   }
   Widget _travellerInformationWidget()
   {
-    return customDropDownButton(
-      values: const [
-        '1',
-        '2',
-        '3',
-        '4'
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        customDropDownButton(
+          values: const [
+            '1',
+            '2',
+            '3',
+            '4'
+          ],
+          width: _deviceWidth *0.45,
+        ),
+
+        customDropDownButton(
+          values: const [
+            'economy',
+            'business',
+            'first class',
+            '2nd class'
+          ],
+          width: _deviceWidth *0.40,
+        ),
       ],
-      width: _deviceWidth *0.45,
     );
   }
 }
