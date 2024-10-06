@@ -55,7 +55,9 @@ return Container(height: _deviceHeight *0.25,
     mainAxisSize: MainAxisSize.max,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      _destinationDropDownWidget()
+      _destinationDropDownWidget(),
+      _travellerInformationWidget(),
+      _ridebatton(),
     ],
   ),
 );
@@ -94,6 +96,17 @@ return Container(height: _deviceHeight *0.25,
           width: _deviceWidth *0.40,
         ),
       ],
+    );
+  }
+
+  Widget _ridebatton()
+  {
+    return Container(
+      margin: EdgeInsets.only(bottom: _deviceHeight *0.01),
+
+      width: _deviceWidth,
+     decoration: BoxDecoration(color: Colors.white,borderRadius:BorderRadius.circular(10) ),
+      child:MaterialButton(onPressed: () {},child: Text("book ride",style: TextStyle(color: Colors.blue),),),
     );
   }
 }
