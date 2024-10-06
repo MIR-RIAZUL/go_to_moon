@@ -18,13 +18,22 @@ class Homepage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: _deviceWidth * 0.05,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [_PageTitle(),
-                    _bookRideWidget()],
-                ))));
+                child:Stack(children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [_PageTitle(),
+                      _bookRideWidget()],
+                    ),
+                 Align(
+                   alignment: Alignment.centerRight,
+                   child:  _astroImageWidget(),)
+                  ],
+                )
+            )
+        )
+    );
   }
 
   Widget _PageTitle() {
@@ -40,6 +49,8 @@ class Homepage extends StatelessWidget {
 
   Widget _astroImageWidget() {
     return Container(
+      height: _deviceHeight *0.50,
+      width: _deviceWidth *0.65,
       decoration: BoxDecoration(
           image: DecorationImage(
         fit: BoxFit.fitHeight,
